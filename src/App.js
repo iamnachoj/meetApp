@@ -1,7 +1,7 @@
 import React from 'react';
 
-//componets
-import EventList from './components/eventlist-view/event-list-view';
+//components
+import EventList from './components/eventlist/event-list';
 
 //CSS
 import './App.css';

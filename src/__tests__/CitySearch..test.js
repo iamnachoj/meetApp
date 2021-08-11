@@ -14,6 +14,10 @@ describe('<CitySearch/> component', () => {
   });
   test('render suggestions', () =>{
     expect(citySearchWrapper.find('.suggestions')).toHaveLength(1);
-  })
+  });
+  test('renders text input correctly', () => {
+    const query = citySearchWrapper.state('query');
+    expect(citySearchWrapper.find('.city-input').prop('value')).toBe(query);
+  });
 
 });

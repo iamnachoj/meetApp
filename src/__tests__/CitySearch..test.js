@@ -5,10 +5,15 @@ import {shallow} from 'enzyme';
 import CitySearch from '../components/citysearch/citysearch';
 
 describe('<CitySearch/> component', () => {
+  
+  let citySearchWrapper;
+  beforeAll(() => {citySearchWrapper = shallow(<CitySearch/>)})
 
- test('render text input', () => {
-  const citySearchWrapper = shallow(<CitySearch/>);
-  expect(citySearchWrapper.find('.city-input')).toHaveLength(1);
- });
+  test('render text input', () => {
+    expect(citySearchWrapper.find('.city-input')).toHaveLength(1);
+  });
+  test('render suggestions', () =>{
+    expect(citySearchWrapper.find('.suggestions')).toHaveLength(1);
+  })
 
 });

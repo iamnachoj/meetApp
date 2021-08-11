@@ -5,6 +5,7 @@ class CitySearch extends React.Component {
     return (
       <div className="CitySearch">
         <input type="text" className='city-input' />
+        <ul className='suggestions'></ul>
       </div>
     )
   }

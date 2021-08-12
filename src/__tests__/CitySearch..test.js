@@ -8,8 +8,11 @@ import CitySearch from '../components/citysearch/citysearch';
 
 describe('<CitySearch/> component', () => {
   
-  let citySearchWrapper;
-  beforeAll(() => {citySearchWrapper = shallow(<CitySearch/>)})
+  let locations, citySearchWrapper;
+  beforeAll(() => {
+    locations = extractLocations(mockData);
+    citySearchWrapper = shallow(<CitySearch/>);
+  })
 
   //1 
   test('render text input', () => {
@@ -35,7 +38,6 @@ describe('<CitySearch/> component', () => {
   });
   //5
   test('render list of suggestions correctly', () => {
-    const locations = extractLocations(mockData);
     const citySearchWrapper = shallow(<CitySearch />);
     citySearchWrapper.setState({ suggestions: locations });
     const suggestions = citySearchWrapper.state('suggestions');

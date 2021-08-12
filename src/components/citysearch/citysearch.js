@@ -1,5 +1,8 @@
 import React from 'react';
 
+import {mockData} from '../../mock-data';
+import { extractLocations } from '../../api';
+
 class CitySearch extends React.Component {
 
   constructor() {
@@ -15,9 +18,16 @@ class CitySearch extends React.Component {
 
   //function to change 'query' when writting text in the input 'city-input'
   handleInputChange = (event) => {
+    let locations = extractLocations(mockData);
     const value = event.target.value;
-    this.setState({query:value});
-  }
+    const suggestions = locations.filter((location) => {
+      return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+    });
+    this.setState({
+      query: value,
+      suggestions,
+    });
+  };
 
   render(){
     return (

@@ -11,7 +11,7 @@ class NumberOfEvents extends React.Component {
         <p>Number of Events</p>
         <input
           type="number"
-          className="eventNum"
+          className="num-events"
           value={this.state.numberOfEvents}
         />
       </div>

@@ -38,7 +38,6 @@ describe('<CitySearch/> component', () => {
   });
   //5
   test('render list of suggestions correctly', () => {
-    const citySearchWrapper = shallow(<CitySearch />);
     citySearchWrapper.setState({ suggestions: locations });
     const suggestions = citySearchWrapper.state('suggestions');
     expect(citySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);

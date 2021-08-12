@@ -5,6 +5,7 @@ import {shallow} from 'enzyme';
 import App from '../components/app/App';
 import EventList from '../components/eventlist/event-list';
 import CitySearch from '../components/citysearch/citysearch';
+import NumberOfEvents from '../components/numberofevents/numberofevents';
 
 
 //test suite
@@ -21,5 +22,8 @@ describe('< App /> component', () => {
   
   test('render CitySearch', () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
+  })
+  test('render number of events counter', () => {
+    expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
   })
 })

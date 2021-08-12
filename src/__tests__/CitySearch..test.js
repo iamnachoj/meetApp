@@ -58,5 +58,13 @@ describe('<CitySearch/> component', () => {
     });
     expect(citySearchWrapper.state("suggestions")).toEqual(filteredLocations);
   });
+  //7
+  test("selecting a suggestion should change query state", () => {
+    citySearchWrapper.setState({
+      query: 'Berlin'  });
+    const suggestions = citySearchWrapper.state('suggestions');
+    citySearchWrapper.find('.suggestions li').at(0).simulate('click');
+    expect(citySearchWrapper.state("query")).toBe(suggestions[0]);
+  });
 
 });

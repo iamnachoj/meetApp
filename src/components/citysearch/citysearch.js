@@ -16,6 +16,13 @@ class CitySearch extends React.Component {
 
   }
 
+  //function that handles the clicked suggestion
+  handleItemClicked = (suggestion) => {
+    this.setState({
+      query: suggestion
+    });
+  }
+
   //function to change 'query' when writting text in the input 'city-input'
   handleInputChange = (event) => {
     let locations = extractLocations(mockData);
@@ -35,7 +42,7 @@ class CitySearch extends React.Component {
         <input type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} />
         <ul className="suggestions">
           {this.state.suggestions.map((suggestion) => (
-            <li key={suggestion}>{suggestion}</li>
+            <li key={suggestion} onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
           ))}
           <li key="all">
             <b>see all cities</b>

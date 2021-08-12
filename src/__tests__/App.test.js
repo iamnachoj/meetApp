@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 //components
-import App from '../components/app/App';
+import App from '../App';
 import EventList from '../components/eventlist/event-list';
 import CitySearch from '../components/citysearch/citysearch';
 import NumberOfEvents from '../components/numberofevents/numberofevents';

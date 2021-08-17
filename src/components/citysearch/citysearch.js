@@ -7,7 +7,7 @@ class CitySearch extends React.Component {
 
   constructor() {
     super();
-
+     
     //state
     this.state = {
       query: '',
@@ -37,6 +37,7 @@ class CitySearch extends React.Component {
   };
 
   render(){
+    const { locations } = this.props;
     return (
       <div className="CitySearch">
         <input type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} />

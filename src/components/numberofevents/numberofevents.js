@@ -13,6 +13,7 @@ class NumberOfEvents extends React.Component {
           type="number"
           className="num-events"
           value={this.state.numberOfEvents}
+          readOnly
         />
       </div>
     );

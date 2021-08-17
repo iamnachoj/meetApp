@@ -5,7 +5,7 @@ class Event extends React.Component{
     showMore: false
   }
   render(){
-    const { event: {sumary, description } } = this.props
+    const { event: { description } } = this.props
     return (
       <div>
         <h4 className='event-title'>title</h4>

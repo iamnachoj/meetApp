@@ -8,13 +8,16 @@ import {mockData} from './mock-data';
 import { extractLocations } from './api';
 
 class App extends React.Component {
+  state = {
+    events: []
+  }
   render(){
     let locations = extractLocations(mockData)
     return (
     <div className='App'>
       <CitySearch locations={locations}/>
       <NumberOfEvents/>
-      <EventList events={mockData}/>
+      <EventList events={this.state.events}/>
     </div>
     );
   }

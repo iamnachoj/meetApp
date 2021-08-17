@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 //components
 import App from '../App';
@@ -27,3 +27,20 @@ describe('< App /> component', () => {
     expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
   })
 })
+
+//integration testing
+describe('<App /> integration', () => {
+
+  let AppWrapper;
+  beforeAll(() => {
+     AppWrapper = mount(<App/>)
+  });
+
+  test('App passes "events" state as a prop to EventList', () => {
+    const AppEventsState = AppWrapper.state('events');
+    expect(AppEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(EventList).props().events).toEqual(AppEventsState);
+    AppWrapper.unmount();
+  });
+
+});

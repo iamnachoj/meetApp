@@ -14,7 +14,7 @@ class App extends React.Component {
     <div className='App'>
       <CitySearch locations={locations}/>
       <NumberOfEvents/>
-      <EventList/>
+      <EventList events={mockData}/>
     </div>
     );
   }

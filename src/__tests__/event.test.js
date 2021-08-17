@@ -1,12 +1,13 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import {mockData} from '../mock-data';
 import Event from '../components/event/event';
 
 describe('<Event/> component', () => {
   let eventWrapper;
   beforeAll(() => {
-    eventWrapper = shallow(<Event/>);
+    eventWrapper = shallow(<Event event={mockData[0]}/>);
   })
     
   test('event has a title', () => {
@@ -19,10 +20,12 @@ describe('<Event/> component', () => {
     expect(eventWrapper.find('.details')).toHaveLength(0) 
     //for now, it checks that, when the button to show more details is not clicked, it doesn't show any more details.
   })
-  test('button opens a list of details', () => {
+  test('there is a button', () => {
+    expect(eventWrapper.find('.details-button')).toHaveLength(1) 
+  });
+  test('details displayed when button clicked', () => {
     eventWrapper.find('.details-button').simulate('click');
-    expect(eventWrapper.find('.details')).toHaveLength(1) 
-    // here when you click the button, the details get displayed. 
-  })
+    expect(eventWrapper.find('.details')).toHaveLength(1);
+  });
 
 })

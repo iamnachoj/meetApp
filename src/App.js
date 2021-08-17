@@ -4,10 +4,11 @@ import React from 'react';
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
+import { mockData } from './mock-data';
 
 class App extends React.Component {
   state = {
-    events: [],
+    events: [...mockData],
     locations: []
   }
 

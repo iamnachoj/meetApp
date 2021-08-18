@@ -11,7 +11,7 @@ describe('<CitySearch/> component', () => {
   let locations, citySearchWrapper;
   beforeAll(() => {
     locations = extractLocations(mockData);
-    citySearchWrapper = shallow(<CitySearch/>);
+    citySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => {}} />);
   })
 
   //1 

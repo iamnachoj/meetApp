@@ -4,7 +4,7 @@ import React from 'react';
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
-import { getEvents } from './api';
+import { getEvents, extractLocations } from './api';
 
 class App extends React.Component {
   state = {
@@ -13,12 +13,12 @@ class App extends React.Component {
   }
   
   updateEvents = (location) => {
-  getEvents().then((events) => {
-    const locationEvents = events.filter((event) => event.location === location);
+   getEvents().then((events) => {
+    const locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location)
     this.setState({
-      events: locationEvents
-    })
-  })
+      events : locationEvents
+    });
+  });
   }
 
   render(){
@@ -29,6 +29,19 @@ class App extends React.Component {
       <EventList events={this.state.events}/>
     </div>
     );
+  }
+
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.mounted = false;
   }
 }
 

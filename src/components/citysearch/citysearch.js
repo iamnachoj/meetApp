@@ -21,6 +21,7 @@ class CitySearch extends React.Component {
     this.setState({
       query: suggestion
     });
+    this.props.updateEvents(suggestion);
   }
 
   //function to change 'query' when writting text in the input 'city-input'

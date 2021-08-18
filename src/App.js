@@ -4,18 +4,27 @@ import React from 'react';
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
-import { mockData } from './mock-data';
+import { getEvents } from './api';
 
 class App extends React.Component {
   state = {
-    events: [...mockData],
+    events: [],
     locations: []
+  }
+  
+  updateEvents = (location) => {
+  getEvents().then((events) => {
+    const locationEvents = events.filter((event) => event.location === location);
+    this.setState({
+      events: locationEvents
+    })
+  })
   }
 
   render(){
     return (
     <div className='App'>
-      <CitySearch locations={this.state.locations}/>
+      <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <NumberOfEvents/>
       <EventList events={this.state.events}/>
     </div>

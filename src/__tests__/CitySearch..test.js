@@ -65,5 +65,11 @@ describe('<CitySearch/> component', () => {
     citySearchWrapper.find('.suggestions li').at(0).simulate('click');
     expect(citySearchWrapper.state("query")).toBe(suggestions[0]);
   });
+  //8
+  test("selecting CitySearch input reveals the suggestions list", () => {
+    citySearchWrapper.find('.city-input').simulate('focus');
+    expect(citySearchWrapper.state('showSuggestions')).toBe(true);
+    expect(citySearchWrapper.find('.suggestions').prop('style')).not.toEqual({ display: 'none' });
+  });
 
 });

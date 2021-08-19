@@ -2,7 +2,7 @@ import React from "react";
 
 class NumberOfEvents extends React.Component {
   render() {
-    const { events } = this.props;
+    const {events} = this.props;
     return (
       <div className="NumberOfEvents">
         <p>Events:</p>

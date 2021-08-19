@@ -1,5 +1,4 @@
 import React from 'react';
-import datejs from 'datejs';
 
 class Event extends React.Component{
   state = {

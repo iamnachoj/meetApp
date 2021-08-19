@@ -1,18 +1,15 @@
 import React from "react";
 
 class NumberOfEvents extends React.Component {
-  state = {
-    numberOfEvents: 10
-  }
-
   render() {
+    const { events } = this.props;
     return (
-      <div className="NumberOfEvents"> 
-        <p>Events per Page</p>
+      <div className="NumberOfEvents">
+        <p>Events:</p>
         <input
           type="number"
           className="num-events"
-          value={this.state.numberOfEvents}
+          value={events.length}
           readOnly
         />
       </div>

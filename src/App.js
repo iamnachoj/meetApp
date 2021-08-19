@@ -25,7 +25,7 @@ class App extends React.Component {
     return (
     <div className='App'>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-      <NumberOfEvents/>
+      <NumberOfEvents events={this.state.events}/>
       <EventList events={this.state.events}/>
     </div>
     );

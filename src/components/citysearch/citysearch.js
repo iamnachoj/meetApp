@@ -43,7 +43,7 @@ class CitySearch extends React.Component {
     const { locations } = this.props;
     return (
       <div className="citySearch">
-        <input type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />
+        <input placeholder='select your city...' type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
             <li key={suggestion} onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>

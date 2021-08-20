@@ -4,7 +4,7 @@ class NumberOfEvents extends React.Component {
   render() {
     const {events} = this.props;
     return (
-      <div className="NumberOfEvents">
+      <div className="numberOfEvents">
         <p>Events:</p>
         <input
           type="number"

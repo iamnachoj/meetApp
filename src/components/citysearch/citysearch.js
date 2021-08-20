@@ -38,7 +38,7 @@ class CitySearch extends React.Component {
       suggestions,
     });
   };
-
+  //Render method
   render(){
     const { locations } = this.props;
     return (

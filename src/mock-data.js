@@ -19,11 +19,11 @@ const mockData = [
       "self": true
       },
       "start": {
-      "dateTime": "2020-05-19T16:00:00+02:00",
+      "dateTime": "2021-10-07T16:00:00+02:00",
       "timeZone": "Europe/Berlin"
       },
       "end": {
-      "dateTime": "2020-05-19T17:00:00+02:00",
+      "dateTime": "2021-10-07T17:00:00+02:00",
       "timeZone": "Europe/Berlin"
       },
       "recurringEventId": "4eahs9ghkhrvkld72hogu9ph3e",
@@ -41,7 +41,45 @@ const mockData = [
    {
       "kind": "calendar#event",
       "etag": "\"3181159875584000\"",
-      "id": "3qtd6uscq4tsi6gc7nmmtpqlct_20200520T120000Z",
+      "id": "3qtd6uscq4tsi6gc7nmmtpqlct_20200520T120000Z", 
+      "status": "confirmed",
+      "created": "2021-05-21T19:14:30.000Z",
+      "updated": "2021-05-27T11:45:37.792Z",
+      "summary": "Redux from scratch",
+      "description": "Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. After this lecture, you will have a profound understanding of this popular framework ",
+      "location": "Madrid, Spain",
+      "creator": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+      },
+      "organizer": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+      },
+      "start": {
+      "dateTime": "2021-09-20T14:00:00+02:00",
+      "timeZone": "Europe/Berlin"
+      },
+      "end": {
+      "dateTime": "2021-05-20T15:00:00+02:00",
+      "timeZone": "Europe/Berlin"
+      },
+      "recurringEventId": "3qtd6uscq4tsi6gc7nmmtpqlct",
+      "originalStartTime": {
+      "dateTime": "2021-09-20T14:00:00+02:00",
+      "timeZone": "Europe/Berlin"
+      },
+      "iCalUID": "3qtd6uscq6tno6gc7nmmtpqlct@google.com",
+      "sequence": 0,
+      "reminders": {
+      "useDefault": true
+      },
+      "eventType": "default"
+   },
+   {
+      "kind": "calendar#event",
+      "etag": "\"3181856675599000\"",
+      "id": "4tyui4hhyuzqkld72lify9ph3e_20130567T170000Z",
       "status": "confirmed",
       "htmlLink": "https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA1MjBUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
       "created": "2020-05-19T19:14:30.000Z",
@@ -58,16 +96,16 @@ const mockData = [
       "self": true
       },
       "start": {
-      "dateTime": "2020-05-20T14:00:00+02:00",
+      "dateTime": "2021-09-24T14:00:00+02:00",
       "timeZone": "Europe/Berlin"
       },
       "end": {
-      "dateTime": "2020-05-20T15:00:00+02:00",
+      "dateTime": "2021-09-24T15:00:00+02:00",
       "timeZone": "Europe/Berlin"
       },
       "recurringEventId": "3qtd6uscq4tsi6gc7nmmtpqlct",
       "originalStartTime": {
-      "dateTime": "2020-05-20T14:00:00+02:00",
+      "dateTime": "2021-09-24T14:00:00+02:00",
       "timeZone": "Europe/Berlin"
       },
       "iCalUID": "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",

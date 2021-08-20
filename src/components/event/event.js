@@ -11,7 +11,7 @@ class Event extends React.Component{
       <div className='event'>
         <h4 className='event-title'>{summary}</h4>
         <p>{start.dateTime}</p>
-        <button onClick={e => this.setState({showMore: !this.state.showMore})} className='details-btn'>show more</button>
+        <button onClick={e => this.setState({showMore: !this.state.showMore})} className='btn position-btn'>show more</button>
         {this.state.showMore ? 
         <div className='details'>
           <ul>

@@ -40,7 +40,6 @@ class CitySearch extends React.Component {
   };
   //Render method
   render(){
-    const { locations } = this.props;
     return (
       <div className="citySearch">
         <input placeholder='select your city...' type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />

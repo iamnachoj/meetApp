@@ -3,7 +3,7 @@
 body{
   font-family: 'Space Grotesk', sans-serif;
   text-align: left;
-  margin: 10px 20%;
+  margin: 50px 20%;
 }
 ul{
   list-style-type: none;
@@ -86,13 +86,10 @@ input[type="number"] {
 .suggestions > li:hover {
   background-color: #bcdcdb;
 }
-.event {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  position: relative;
+
+.details{
+  margin: 2px 0;
+  line-height: 30px;
 }
 
 .position-btn {
@@ -123,8 +120,18 @@ input[type="number"] {
 	background-color:#2b2e2e;
 }     
 
+.event {
+  font-size: 1.1rem;
+  padding: 10px 10px 35px;
+  margin-bottom: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
 .event-title {
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 

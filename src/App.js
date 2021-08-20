@@ -5,6 +5,8 @@ import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
 import { getEvents, extractLocations } from './api';
+//nprogress css file
+import './nprogress.css';
 
 class App extends React.Component {
   state = {

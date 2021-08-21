@@ -56,5 +56,6 @@ Given the user was typing “Berlin” in the city textbox And the list of sugge
 
 ## Deployment
 
-Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>
+Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>.
+
 Else, you can always for the project, make sure all dependencies are installed and run 'npm start'

@@ -53,3 +53,8 @@ Given the main page is open When user starts typing in the city textbox Then the
 #### SCENARIO 3: User can select a city from the suggested list.
 
 Given the user was typing “Berlin” in the city textbox And the list of suggested cities is showing When the user selects a city (e.g., “Berlin, Germany”) from the list Then their city should be changed to that city (i.e., “Berlin, Germany”) And the user should receive a list of upcoming events in that city
+
+## Deployment
+
+Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>
+Else, you can always for the project, make sure all dependencies are installed and run 'npm start'

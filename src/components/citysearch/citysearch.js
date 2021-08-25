@@ -20,7 +20,8 @@ class CitySearch extends React.Component {
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
-      showSuggestions: false
+      showSuggestions: false,
+      infoText: ''
     });
     this.props.updateEvents(suggestion);
   }

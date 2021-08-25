@@ -24,11 +24,18 @@ class Alert extends React.Component {
 }
 
 
-//subclass that extends Alert component
+//subclasses that extends Alert component
 export class InfoAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = 'rgb(234, 250, 255)';
     this.borderColor = 'dodgerblue'
+  }
+}
+export class ErrorAlert extends Alert {
+  constructor(props) {
+    super(props);
+    this.color = 'rgb(255, 205, 205)';
+    this.borderColor = 'red'
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import {mockData} from '../../mock-data';
-import { extractLocations } from '../../api';
+import { InfoAlert } from '../alert/alert';
 
 class CitySearch extends React.Component {
 
@@ -42,6 +41,7 @@ class CitySearch extends React.Component {
   render(){
     return (
       <div className="citySearch">
+        <InfoAlert text={this.state.infoText} />
         <input placeholder='select your city...' type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (

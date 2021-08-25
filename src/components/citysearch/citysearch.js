@@ -47,17 +47,21 @@ class CitySearch extends React.Component {
   //Render method
   render(){
     return (
-      <div className="citySearch">
+      <div>
+        <div className='alert-center'>
         <InfoAlert text={this.state.infoText} style={{display: 'none'}} />
-        <input placeholder='select your city...' type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />
-        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
-          {this.state.suggestions.map((suggestion) => (
-            <li key={suggestion} onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
-          ))}
-          <li onClick={() => this.handleItemClicked("all")}>
-            <b>see all cities</b>
-          </li>
-        </ul>
+        </div>
+        <div className="citySearch">
+          <input placeholder='select your city...' type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />
+          <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
+            {this.state.suggestions.map((suggestion) => (
+              <li key={suggestion} onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
+            ))}
+            <li onClick={() => this.handleItemClicked("all")}>
+              <b>see all cities</b>
+            </li>
+          </ul>
+        </div>
       </div>
     )
   }

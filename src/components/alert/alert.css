@@ -13,3 +13,12 @@
   width: 50% ;
   text-align: center;
 }
+
+@media screen and (max-width: 890px) {
+  .alert{
+    width: 100%;
+  }
+  .alert-center{
+    width: 100%;
+  }
+ }

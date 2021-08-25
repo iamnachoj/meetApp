@@ -28,7 +28,7 @@ class CitySearch extends React.Component {
 
   //function to change 'query' when writting text in the input 'city-input'
   handleInputChange = (event) => {
-    let locations = extractLocations(mockData);
+    let locations = this.props.locations;
     const value = event.target.value;
     const suggestions = locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;

@@ -12,6 +12,11 @@ class NumberOfEvents extends React.Component {
     this.setState({
       errorText:'Number of events cannot be changed'
     });
+    setTimeout(() => {
+      this.setState({
+        errorText: ''
+      })
+    }, 3000)
   }
 
   render() {

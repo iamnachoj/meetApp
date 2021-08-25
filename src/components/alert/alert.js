@@ -39,3 +39,10 @@ export class ErrorAlert extends Alert {
     this.borderColor = 'red'
   }
 }
+export class WarningAlert extends Alert {
+  constructor(props) {
+    super(props);
+    this.color = 'rgb(255, 255, 215)';
+    this.borderColor = 'yellow'
+  }
+}

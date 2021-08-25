@@ -32,16 +32,23 @@ class CitySearch extends React.Component {
     const suggestions = locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
+    if(suggestions.length === 0){
+      this.setState({
+        query:value,
+        infoText: 'We can not find the city you are looking for. Please try another city'
+      })
+    } else{
     this.setState({
       query: value,
       suggestions,
-    });
+     });
+    }
   };
   //Render method
   render(){
     return (
       <div className="citySearch">
-        <InfoAlert text={this.state.infoText} />
+        <InfoAlert text={this.state.infoText} style={{display: 'none'}} />
         <input placeholder='select your city...' type="text" className="city-input" value={this.state.query} onChange={this.handleInputChange} onFocus={() => {this.setState({showSuggestions : true})}} />
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (

@@ -1,21 +1,23 @@
 import React from 'react';
-
+import './alert.css';
 class Alert extends React.Component {
 
  constructor(props){
    super(props);
-   this.color = null;
+   this.backgroundColor = null;
+   this.borderColor = null;
  }
 
  getStyle = () => {
    return {
-     color : this.color
+     backgroundColor : this.color,
+     borderColor: this.borderColor
    };
  }
  render() {
    return (
-     <div className='alert'>
-      <p style={this.getStyle()}>{this.props.text}</p>
+     <div>
+      <p className='alert' style={this.getStyle()}>{this.props.text}</p>
      </div>
    );
  }
@@ -26,6 +28,7 @@ class Alert extends React.Component {
 export class InfoAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'blue';
+    this.color = 'rgb(234, 250, 255)';
+    this.borderColor = 'dodgerblue'
   }
 }

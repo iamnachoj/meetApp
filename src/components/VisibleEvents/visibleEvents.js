@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import "./visibleEvents.css";
 
 class VisibleEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleEvents: 30
+      visibleEvents: 32
     };
   }
+
 
   handleChange = (event) => {
     const value = event.target.value;
@@ -19,16 +19,11 @@ class VisibleEvents extends Component {
 
   render() {
     return (
-        <div className="visibleEvents">
-          <p>Shown events:</p>
-          <input
-            type="number"
-            min="0"
-            className="num-events"
-            value={this.state.visibleEvents}
-            onChange={e => this.handleChange(e)}
-          />
-        </div>
+      <input
+        type="number"
+        className="number"
+        value={this.state.visibleEvents}
+        onChange={e => this.handleChange(e)} />
     )
   }
 }

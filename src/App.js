@@ -4,6 +4,7 @@ import React from 'react';
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
+import VisibleEvents from './components/VisibleEvents/visibleEvents';
 import { getEvents, extractLocations } from './api';
 //nprogress css file
 import './nprogress.css';
@@ -12,16 +13,26 @@ import { WarningAlert } from './components/alert/alert';
 class App extends React.Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
+    visibleEvents: 32,
+    selectedLocation: 'all',
   }
   
-  updateEvents = (location) => {
-   getEvents().then((events) => {
-    const locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location)
-    this.setState({
-      events : locationEvents
+  updateEvents = (location, eventCount) => {
+    getEvents().then((events) => {
+      const locationEvents = (location === 'all')
+        ? events
+        : events.filter(event => event.location === location);
+      this.setState({
+        events: locationEvents.slice(0, eventCount),
+        numberOfEvents: eventCount,
+      });
     });
-  });
+  };
+
+  changeCount = newCount => {
+    const { selectedLocation } = this.state;
+    this.updateEvents(selectedLocation, newCount);
   }
 
   render(){
@@ -40,6 +51,7 @@ class App extends React.Component {
     <div className='App'>
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
+      <VisibleEvents events={this.state.events} changeCount={this.changeCount}/>
       <NumberOfEvents events={this.state.events}/>
       <EventList events={this.state.events}/>
     </div>

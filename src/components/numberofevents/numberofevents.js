@@ -26,7 +26,7 @@ class NumberOfEvents extends React.Component {
       <div className="numberOfEvents">
         <ErrorAlert text={this.state.errorText}/>
         <div>
-          <p>Events:</p>
+          <p>Total:</p>
           <input
             type="number"
             className="num-events"

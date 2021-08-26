@@ -14,7 +14,7 @@ class App extends React.Component {
   state = {
     events: [],
     locations: [],
-    selectedLocation: 'all',
+    selectedLocation: 'all'
   }
   
   updateEvents = (location, eventCount) => {
@@ -24,7 +24,7 @@ class App extends React.Component {
         : events.filter(event => event.location === location);
       this.setState({
         events: locationEvents.slice(0, eventCount),
-        numberOfEvents: eventCount,
+        NumberOfEvents: eventCount,
       });
     });
   };

@@ -8,6 +8,7 @@ import { getEvents, extractLocations } from './api';
 //nprogress css file
 import './nprogress.css';
 import logo from './meetApp.png'
+import { WarningAlert } from './components/alert/alert';
 class App extends React.Component {
   state = {
     events: [],
@@ -24,6 +25,17 @@ class App extends React.Component {
   }
 
   render(){
+    if(!navigator.onLine){
+      return(
+      <div className='App'>
+        <WarningAlert text="You are offline. new events could not be loaded"/>
+        <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
+        <NumberOfEvents events={this.state.events}/>
+        <EventList events={this.state.events}/>
+      </div>
+      )
+    }
     return (
     <div className='App'>
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>

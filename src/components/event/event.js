@@ -1,4 +1,5 @@
 import React from 'react';
+import './event.css'
 
 class Event extends React.Component{
   state = {

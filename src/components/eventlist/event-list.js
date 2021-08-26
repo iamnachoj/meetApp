@@ -1,4 +1,5 @@
 import React from 'react';
+import './event-list.css'
 
 //components
 import Event from '../event/event';

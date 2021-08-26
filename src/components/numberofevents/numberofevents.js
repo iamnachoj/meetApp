@@ -22,6 +22,24 @@ class NumberOfEvents extends React.Component {
 
   render() {
     const {events} = this.props;
+    const value = events.length;
+    if(value >= 30){
+        return (
+      <div className="numberOfEvents">
+        <ErrorAlert text={this.state.errorText}/>
+        <div>
+          <p>Events:</p>
+          <input
+            type="number"
+            className="num-events"
+            value={30}
+            readOnly
+            onClick={() => this.showAlert()}
+          />
+        </div>
+      </div>
+      )
+    }
     return (
       <div className="numberOfEvents">
         <ErrorAlert text={this.state.errorText}/>

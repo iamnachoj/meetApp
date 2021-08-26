@@ -3,7 +3,7 @@ import React from 'react';
 //components
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
-import VisibleEvents from './components/VisibleEvents/visibleEvents';
+import NumberOfEvents from './components/numberOfEvents/numberOfEvents';
 import { getEvents, extractLocations } from './api';
 //nprogress css file
 import './nprogress.css';
@@ -48,7 +48,7 @@ class App extends React.Component {
     <div className='App'>
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-      <VisibleEvents events={this.state.events} changeCount={this.changeCount}/>
+      <NumberOfEvents events={this.state.events} changeCount={this.changeCount}/>
       <EventList events={this.state.events}/>
     </div>
     );

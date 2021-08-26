@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import "./visibleEvents.css";
+import "./numberOfEvents.css";
 
-class VisibleEvents extends Component {
+class NumberOfEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleEvents: 20
+     numberOfEvents: 20
     };
   }
   
   handleChange = (event) => {
     const value = event.target.value;
     this.setState({
-      visibleEvents: value,
+      numberOfEvents: value,
     });
     this.props.changeCount(value);
   };
 
   render() {
     return (
-        <div className="visibleEvents">
+        <div className="numberOfEvents">
           <p>Events per page:</p>
           <input
             type="number"
             min="0"
             className="num-events"
-            value={this.state.visibleEvents}
+            value={this.state.numberOfEvents}
             onChange={e => this.handleChange(e)}
           />
         </div>
@@ -33,4 +33,4 @@ class VisibleEvents extends Component {
   }
 }
 
-export default VisibleEvents;
+export default NumberOfEvents;

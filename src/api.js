@@ -1,6 +1,7 @@
 import {mockData} from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
+import {events} from './App';
 
 //Function to get Access Token
 export const getAccessToken = async () => {
@@ -60,6 +61,7 @@ export const getEvents = async () => {
     NProgress.done();
     return data?JSON.parse(events).events:[];;
   }
+
   const token = await getAccessToken();
   
   if (token) {

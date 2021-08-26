@@ -17,7 +17,7 @@ defineFeature(feature, test => {
   let EventWrapper;
   let AppWrapper;
   let NumberOfEventsWrapper;
-  test('When user hasn’t specified a number, show 20 events.', ({ given, when, then }) => {
+  test('When user hasn’t specified a number, show all number of events.', ({ given, when, then }) => {
     given('the user didn’t have a preference of the quantity of events he wants to receive', () => {
       EventListWrapper = mount(<EventList events={mockData} />);
       EventWrapper = mount(<Event event={mockData[0]} />);
@@ -27,9 +27,9 @@ defineFeature(feature, test => {
       AppWrapper = mount(<App />);
     });
 
-    then('it should receive 20 as default', () => {
+    then('it should receive all events as default', () => {
       NumberOfEventsWrapper = mount(<NumberOfEvents events={mockData} />);
-      expect(NumberOfEventsWrapper.find('.num-events').props().value).toBe(20)
+      expect(NumberOfEventsWrapper.find('.num-events').props().value).toBe(3)
     });
   });
   test('User can see the number of events the specified city has', ({ given, when, then }) => {

@@ -13,6 +13,9 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+.event-date{
+  margin: 0 0 20px;
+}
 
 .position-btn {
   position: absolute;
@@ -41,6 +44,6 @@
 }     
 
 .details{
-  margin: 2px 0 17px;
+  margin: 2px 0 25px;
   line-height: 30px;
 }

@@ -49,16 +49,16 @@ defineFeature(feature, test => {
 
     and('the list of suggested cities is showing', () => {
       AppWrapper.update();
-      expect(AppWrapper.find('.suggestions li')).toHaveLength(2);
+      expect(AppWrapper.find('li')).toHaveLength(4);
     });
 
     when('the user selects a city (e.g., “Berlin, Germany”) from the list', () => {
-      AppWrapper.find('.suggestions li').at(0).simulate('click');
+      AppWrapper.find('li').at(2).simulate('click');
     });
 
     then('their city should be changed to that city (i.e., “Berlin, Germany”)', () => {
       const CitySearchWrapper = AppWrapper.find(CitySearch);
-      expect(CitySearchWrapper.state('query')).toBe('Berlin, Germany');
+      expect(CitySearchWrapper.state('query')).toBe('Berlin');
     });
 
     and('the user should receive a list of upcoming events in that city', () => {

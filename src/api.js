@@ -1,7 +1,6 @@
 import {mockData} from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
-import {events} from './App';
 
 //Function to get Access Token
 export const getAccessToken = async () => {
@@ -59,7 +58,7 @@ export const getEvents = async () => {
   if (!navigator.onLine) {
     const data = localStorage.getItem("lastEvents");
     NProgress.done();
-    return data?JSON.parse(events).events:[];;
+    return data?JSON.parse("lastEvents").events:[];;
   }
 
   const token = await getAccessToken();

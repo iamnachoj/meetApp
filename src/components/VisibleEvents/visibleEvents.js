@@ -5,10 +5,10 @@ class VisibleEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleEvents: 30
+      visibleEvents: 20
     };
   }
-
+  
   handleChange = (event) => {
     const value = event.target.value;
     this.setState({
@@ -20,7 +20,7 @@ class VisibleEvents extends Component {
   render() {
     return (
         <div className="visibleEvents">
-          <p>Shown events:</p>
+          <p>Events per page:</p>
           <input
             type="number"
             min="0"

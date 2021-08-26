@@ -3,7 +3,6 @@ import React from 'react';
 //components
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
-import NumberOfEvents from './components/numberofevents/numberofevents';
 import VisibleEvents from './components/VisibleEvents/visibleEvents';
 import { getEvents, extractLocations } from './api';
 //nprogress css file
@@ -41,7 +40,6 @@ class App extends React.Component {
         <WarningAlert text="You are offline. new events could not be loaded"/>
         <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-        <NumberOfEvents events={this.state.events}/>
         <EventList events={this.state.events}/>
       </div>
       )
@@ -51,7 +49,6 @@ class App extends React.Component {
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <VisibleEvents events={this.state.events} changeCount={this.changeCount}/>
-      <NumberOfEvents events={this.state.events}/>
       <EventList events={this.state.events}/>
     </div>
     );

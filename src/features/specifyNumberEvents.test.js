@@ -29,7 +29,7 @@ defineFeature(feature, test => {
 
     then('it should receive all events as default', () => {
       NumberOfEventsWrapper = mount(<NumberOfEvents events={mockData} />);
-      expect(NumberOfEventsWrapper.find('.num-events').props().value).toBe(3)
+      expect(NumberOfEventsWrapper.find('.num-events').props().value).toBe(30)
     });
   });
   test('User can see the number of events the specified city has', ({ given, when, then }) => {

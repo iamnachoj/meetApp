@@ -1,59 +1,35 @@
 import React from "react";
-import { ErrorAlert } from '../alert/alert';
 import './numberofevents.css';
 
 class NumberOfEvents extends React.Component {
-  constructor(){
-    super();
+
+  constructor(props) {
+    super(props);
     this.state = {
-      errorText: ''
-    }
+      numberOfEvents: 30
+    };
   }
-  showAlert = () => {
+ 
+  handleChange = (event) => {
+    const value = event.target.value;
     this.setState({
-      errorText:'Number of events cannot be changed'
+      numberOfEvents: value,
     });
-    setTimeout(() => {
-      this.setState({
-        errorText: ''
-      })
-    }, 3000)
-  }
+    this.props.changeCount(value);
+  };
 
   render() {
-    const {events} = this.props;
-    const value = events.length;
-    if(value >= 30){
-        return (
-      <div className="numberOfEvents">
-        <ErrorAlert text={this.state.errorText}/>
-        <div>
-          <p>Events:</p>
-          <input
-            type="number"
-            className="num-events"
-            value={30}
-            readOnly
-            onClick={() => this.showAlert()}
-          />
-        </div>
-      </div>
-      )
-    }
     return (
       <div className="numberOfEvents">
-        <ErrorAlert text={this.state.errorText}/>
-        <div>
-          <p>Events:</p>
-          <input
-            type="number"
-            className="num-events"
-            value={events.length}
-            readOnly
-            onClick={() => this.showAlert()}
-          />
-        </div>
-      </div>
+        <p>Events:</p>
+        <input
+          type="number"
+          min='0'
+          className="num-events"
+          value={this.state.numberOfEvents}
+          onChange={e => this.handleChange(e)}
+        />
+     </div>
     );
   }
 }

@@ -16,7 +16,8 @@ class App extends React.Component {
     events: [],
     locations: [],
     numberOfEvents: 30,
-    selectedLocation: 'all'
+    selectedLocation: 'all',
+    showWelcomeScreen: undefined
   }
   
   updateEvents = (location, eventCount) => {
@@ -37,6 +38,9 @@ class App extends React.Component {
   }
 
   render(){
+    
+    if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+
     if(!navigator.onLine){
       return(
       <div className='App'>
@@ -48,12 +52,14 @@ class App extends React.Component {
       </div>
       )
     }
+
     return (
     <div className='App'>
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} changeCount={this.changeCount} />
       <EventList events={this.state.events}/>
+      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>
     );
   }

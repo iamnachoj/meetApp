@@ -9,7 +9,7 @@ class EventList extends React.Component {
     const { events } = this.props;
     return (
       <ul className="EventList">
-        {events.filter((item, idx) => idx < 30).map(event =>
+        {events.map(event =>
           <li key={event.id}>
             <Event event={event} />
           </li>

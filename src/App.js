@@ -4,7 +4,9 @@ import React from 'react';
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
-import { getEvents, extractLocations } from './api';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
+import WelcomeScreen from './components/welcome-screen/welcome-screen';
+
 //nprogress css file
 import './nprogress.css';
 import logo from './meetApp.png'

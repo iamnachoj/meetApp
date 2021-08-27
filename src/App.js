@@ -4,9 +4,7 @@ import React from 'react';
 import EventList from './components/eventlist/event-list';
 import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
-import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
-import WelcomeScreen from './components/welcome-screen/welcomeScreen';
-
+import { getEvents, extractLocations } from './api';
 //nprogress css file
 import './nprogress.css';
 import logo from './meetApp.png'
@@ -16,8 +14,7 @@ class App extends React.Component {
     events: [],
     locations: [],
     numberOfEvents: 30,
-    selectedLocation: 'all',
-    showWelcomeScreen: undefined
+    selectedLocation: 'all'
   }
   
   updateEvents = (location, eventCount) => {
@@ -38,7 +35,6 @@ class App extends React.Component {
   }
 
   render(){
-    if (this.state.showWelcomeScreen === undefined) return <div className="App"/>
     if(!navigator.onLine){
       return(
       <div className='App'>
@@ -56,27 +52,19 @@ class App extends React.Component {
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} changeCount={this.changeCount} />
       <EventList events={this.state.events}/>
-      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>
     );
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.mounted = true;
-    const accessToken = localStorage.getItem('access_token');
-    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
-    const searchParams = new URLSearchParams(window.location.search);
-    const code = searchParams.get("code");
-    this.setState({showWelcomeScreen: !(code || isTokenValid) });
-    if((code || isTokenValid) && this.mounted){
-      getEvents().then((events) => {
-        if (this.mounted) {
-          this.setState({ 
-            events: events.slice(0, this.state.numberOfEvents), 
-            locations: extractLocations(events) });
-        }
-      });
-    } 
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ 
+          events: events.slice(0, this.state.numberOfEvents), 
+          locations: extractLocations(events) });
+      }
+    });
   }
 
   componentWillUnmount(){

@@ -3,7 +3,8 @@ import './event.css'
 
 class Event extends React.Component{
   state = {
-    showMore: false
+    showMore: false,
+    whatToShow: "Show more"
   }
 
   convertDate(date) {
@@ -21,8 +22,10 @@ class Event extends React.Component{
     return (
       <div className='event'>
         <h4 className='event-title'>{summary}</h4>
-        <p className='event-date'><b>Date:</b> {this.convertDate(start.dateTime)}, from {this.convertTime(start.dateTime)}h to {this.convertTime(end.dateTime)}h</p>
-        <button onClick={e => this.setState({showMore: !this.state.showMore})} className='btn position-btn'>Show more</button>
+        <p className='event-date'><b>Date:</b> {this.convertDate(start.dateTime)}, {this.convertTime(start.dateTime)}h - {this.convertTime(end.dateTime)}h</p>
+        <button  onClick={e => this.setState({showMore: !this.state.showMore, whatToShow: "Show less"})} className='btn position-btn'>
+        {this.state.showMore ? (<span>Show less</span>) : (<span>Show more</span>)}</button>
+
         {this.state.showMore ? 
         <div className='details'>
           <ul>

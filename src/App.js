@@ -59,7 +59,7 @@ class App extends React.Component {
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} changeCount={this.changeCount} />
       <EventList events={this.state.events}/>
-      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
+      {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} /> */}
     </div>
     );
   }

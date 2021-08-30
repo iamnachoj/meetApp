@@ -7,11 +7,11 @@ class Event extends React.Component{
   }
 
   render(){
-    const { event: { location, summary, description, start } } = this.props;
+    const { event: { location, summary, description, start, end } } = this.props;
     return (
       <div className='event'>
         <h4 className='event-title'>{summary}</h4>
-        <p className='event-date'><b>Date:</b> {start.dateTime}</p>
+        <p className='event-date'><b>Date:</b>  {this.convertDate(start.dateTime) + ' -' + this.timeFromDate(end.dateTime)}</p>
         <button onClick={e => this.setState({showMore: !this.state.showMore})} className='btn position-btn'>show more</button>
         {this.state.showMore ? 
         <div className='details'>

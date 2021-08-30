@@ -26,6 +26,15 @@
   outline: none;
   cursor: pointer;
 }
+.position-btn2 {
+  position: absolute;
+  right: 140px;
+  bottom: 5px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
 .btn{
   box-shadow:inset 0px 1px 3px 0px #b0b0b0;
   background-color:#3F72AF;
@@ -39,9 +48,25 @@
 	text-shadow:0px -1px 0px #666666;
 }
 
+.btn2{
+  box-shadow:inset 0px 1px 3px 0px #b0b0b0;
+  background-color:#3ea34e;
+  border-radius:5px;
+  border:1px solid #696969;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:15px;
+  padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #666666;
+}
+
 .btn:hover {
 	background-color:#112D4E;
 }     
+.btn2:hover {
+	background-color:#4dca62;
+}  
 
 .details{
   margin: 2px 0 25px;

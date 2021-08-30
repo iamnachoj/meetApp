@@ -17,17 +17,18 @@ class Event extends React.Component{
 
 
   render(){
-    const { event: { location, summary, description, start, end } } = this.props;
+    const { event: { location, summary, description, start, end, htmlLink } } = this.props;
     return (
       <div className='event'>
         <h4 className='event-title'>{summary}</h4>
         <p className='event-date'><b>Date:</b> {this.convertDate(start.dateTime)}, from {this.convertTime(start.dateTime)}h to {this.convertTime(end.dateTime)}h</p>
-        <button onClick={e => this.setState({showMore: !this.state.showMore})} className='btn position-btn'>show more</button>
+        <button onClick={e => this.setState({showMore: !this.state.showMore})} className='btn position-btn'>Show more</button>
         {this.state.showMore ? 
         <div className='details'>
           <ul>
             <li><b>Location:</b> {location} </li>
             <li><b>Description:</b> {description}</li>
+            <a href={htmlLink} target="_black" ><button className='btn2 position-btn2'>Add to Calendar</button></a>
           </ul>
         </div> : <></>}
       </div>

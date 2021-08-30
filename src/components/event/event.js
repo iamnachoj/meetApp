@@ -23,7 +23,7 @@ class Event extends React.Component{
       <div className='event'>
         <h4 className='event-title'>{summary}</h4>
         <p className='event-date'><b>Date:</b> {this.convertDate(start.dateTime)}, {this.convertTime(start.dateTime)}h - {this.convertTime(end.dateTime)}h</p>
-        <button  onClick={e => this.setState({showMore: !this.state.showMore, whatToShow: "Show less"})} className='btn position-btn'>
+        <button  onClick={e => this.setState({showMore: !this.state.showMore})} className='btn position-btn'>
         {this.state.showMore ? (<span>Show less</span>) : (<span>Show more</span>)}</button>
 
         {this.state.showMore ? 

@@ -1,13 +1,13 @@
 # Meet Up App
-This is a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
+This is a **serverless**, **progressive web application** (PWA) with **React** using a **test-driven development** (TDD) technique. The application uses the **Google Calendar API** to fetch upcoming events.
 
 ## Deployment
 
-This project was built running create-react-app on npm and with the use of a serverless from AWS. 
+This project was built running **create-react-app** on npm and with the use of a serverless from AWS. 
 
 Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>.
 
-Else, you can fork the project, make sure all dependencies are installed and run 'npm start'
+Else, you can fork the project, make sure all dependencies are installed and run ```'npm start' ```
 
 ### Scope
 This application pulls an event list from Google Calendars API. The events are filterable by city, visual data updates in 2 different charts, and allows you to set number of displayed events. The application is also a Progressive Web Application (PWA) allowing you to install it through a browser onto your device.
@@ -15,9 +15,9 @@ This application pulls an event list from Google Calendars API. The events are f
 The intended scope of this project was to learn various testing models. I started with Unit Testing, then Integration testing and finalized the functionality with User Acceptance and End-to-End Testing with Atatus.
 
 ### Technologies Used
-React Google Calendar API
-Dependencies
-testing-library/jest-dom
+- React Google Calendar API
+- Dependencies
+- testing-library/jest-dom
 testing-library/react
 testing-library/user-event
 atatus-spa
@@ -61,9 +61,3 @@ Given the main page is open When user starts typing in the city textbox Then the
 #### SCENARIO 3: User can select a city from the suggested list.
 
 Given the user was typing “Berlin” in the city textbox And the list of suggested cities is showing When the user selects a city (e.g., “Berlin, Germany”) from the list Then their city should be changed to that city (i.e., “Berlin, Germany”) And the user should receive a list of upcoming events in that city
-
-## Deployment
-
-Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>.
-
-Else, you can always for the project, make sure all dependencies are installed and run 'npm start'

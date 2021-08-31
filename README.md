@@ -1,4 +1,4 @@
-# Meet Up App
+# meetApp
 This is a **serverless**, **progressive web application** (PWA) with **React** using a **test-driven development** (TDD) technique. The application uses the **Google Calendar API** to fetch upcoming events.
 
 ## Deployment
@@ -15,34 +15,26 @@ This application pulls an event list from Google Calendars API. The events are f
 The intended scope of this project was to learn various testing models. I started with Unit Testing, then Integration testing and finalized the functionality with User Acceptance and End-to-End Testing with Atatus.
 
 ### Technologies Used
-- React Google Calendar API
-- Dependencies
-- testing-library/jest-dom
-testing-library/react
-testing-library/user-event
-atatus-spa
-axios
-bootstrap
-moment
-nprogress
-react
-react-bootstrap
-react-dom
-react-scripts
-recharts
-web-vitals
-workbox-background-sync
-workbox-broadcast-update
-workbox-cacheable-response
-workbox-core
-workbox-expiration
-workbox-google-analytics
-workbox-navigation-preload
-workbox-precaching
-workbox-range-requests
-workbox-routing
-workbox-strategies
-workbox-streams
+Dependencies | Version
+------------ | -------------
+ React | 17.0.2
+ React-dom | 17.0.2
+ react-scripts | 4.0.3
+ web-vitals | 0.2.4
+ Work-box | 5.1.4
+ datejs | 1.0.0-rc3
+ axios | 0.21.1
+ atatus-spa | 4.3.2
+ gh-pages | 3.2.3
+ 
+ ### testing tools (TDD & BDD)
+  -  "@testing-library/jest-dom": "^5.14.1",
+  - "@testing-library/react": "^11.2.7",
+  - "@testing-library/user-event": "^12.8.3",
+  -  "enzyme": "^3.11.0",
+  -  "jest-cucumber": "^3.0.1",
+  - "puppeteer": "^10.2.0"
+
 
 ## Project Brief
  User Stories for each feature and sceneries for each feature.

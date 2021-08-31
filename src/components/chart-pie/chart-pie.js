@@ -1,6 +1,8 @@
 import React, {useState, useEffect } from 'react';
 import { Pie, PieChart, Cell, ResponsiveContainer, Legend } from 'recharts';
 
+import './chart-pie.css';
+
 const ChartPie = ({ events }) => {
 
   const [data, setData] = useState([]);
@@ -43,7 +45,7 @@ const ChartPie = ({ events }) => {
           ))
         }
       </Pie>
-      <Legend align="left" verticalAlign="bottom" height={36}/>
+      <Legend className="pie-legend" align="left" verticalAlign="bottom" height={36}/>
    </PieChart>
   </ResponsiveContainer>
   )

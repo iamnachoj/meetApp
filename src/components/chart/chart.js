@@ -18,7 +18,7 @@ export default class Chart extends PureComponent {
   render() {
     return (
         <ScatterChart className="chart"
-          width={800}
+          width={1080}
           height={400}
           margin={{
             top: 20,

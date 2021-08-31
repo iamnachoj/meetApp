@@ -1,6 +1,12 @@
 # Meet Up App
 This is a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
+## Deployment
+
+Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>.
+
+Else, you can always for the project, make sure all dependencies are installed and run 'npm start'
+
 ### Scope
 This application pulls an event list from Google Calendars API. The events are filterable by city, visual data updates in 2 different charts, and allows you to set number of displayed events. The application is also a Progressive Web Application (PWA) allowing you to install it through a browser onto your device.
 

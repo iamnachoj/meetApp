@@ -6,6 +6,7 @@ import CitySearch from './components/citysearch/citysearch';
 import NumberOfEvents from './components/numberofevents/numberofevents';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './components/welcome-screen/welcome-screen';
+import Chart from './components/chart/chart';
 
 //nprogress css file
 import './nprogress.css';
@@ -58,6 +59,7 @@ class App extends React.Component {
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} changeCount={this.changeCount} />
+      <Chart locations={this.state.locations} events={this.state.events}/>
       <EventList events={this.state.events}/>
       <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>

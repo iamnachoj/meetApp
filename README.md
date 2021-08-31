@@ -37,4 +37,5 @@ Dependencies | Version
 
 #### Security and authentication
 This site uses the Google Calendar API and will therefore asks users for authentication. This site is used specifically for education purposes and has no commercial intent or use. No personal data is collected or saved at any stage and the calendar accessed is not a personal calendar, but one created specifically for the project.
+
 See the privacy policy <a href="https://iamnachoj.github.io/meetApp/privacy.html" >here</a>

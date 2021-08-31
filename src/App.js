@@ -7,6 +7,7 @@ import NumberOfEvents from './components/numberofevents/numberofevents';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './components/welcome-screen/welcome-screen';
 import Chart from './components/chart/chart';
+import ChartPie from './components/chart-pie/chart-pie';
 
 //nprogress css file
 import './nprogress.css';
@@ -59,7 +60,10 @@ class App extends React.Component {
       <div className='logo-div'><img className='logo' src={logo} alt="logo" /></div>
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} changeCount={this.changeCount} />
-      <Chart locations={this.state.locations} events={this.state.events}/>
+      <div className="data-vis-wrapper">
+        <ChartPie events={this.state.events}/>
+        <Chart locations={this.state.locations} events={this.state.events}/>
+      </div>
       <EventList events={this.state.events}/>
       <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>

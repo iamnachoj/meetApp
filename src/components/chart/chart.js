@@ -17,8 +17,8 @@ export default class Chart extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer height={400} >
-        <ScatterChart className="chart"
+      <ResponsiveContainer height={400} className="recharts-responsive-container" >
+        <ScatterChart
           margin={{
             top: 20,
             right: 60,

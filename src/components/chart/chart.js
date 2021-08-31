@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default class Chart extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
@@ -17,14 +17,12 @@ export default class Chart extends PureComponent {
 
   render() {
     return (
+      <ResponsiveContainer height={400} >
         <ScatterChart className="chart"
-          width={1080}
-          height={400}
           margin={{
             top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20,
+            right: 60,
+            bottom: 20
           }}
         >
           <CartesianGrid />
@@ -33,6 +31,7 @@ export default class Chart extends PureComponent {
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter name="A school" data={this.getData()} fill="#8884d8" />
         </ScatterChart>
+      </ResponsiveContainer>
     );
   }
 }

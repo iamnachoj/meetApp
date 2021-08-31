@@ -27,7 +27,7 @@ export default class Chart extends PureComponent {
         >
           <CartesianGrid />
           <XAxis type="category" dataKey="city" name="city" />
-          <YAxis type="number" dataKey="number" name="Number of events" />
+          <YAxis type="number" dataKey="number" name="Number of events" allowDecimals={false} />
           <Scatter name="A school" data={this.getData()} fill="#8884d8" />
         </ScatterChart>
       </ResponsiveContainer>

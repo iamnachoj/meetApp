@@ -3,6 +3,8 @@ This is a serverless, progressive web application (PWA) with React using a test-
 
 ## Deployment
 
+This project was built running create-react-app on npm and with the use of a serverless from AWS. 
+
 Check out my demo <a href='https://iamnachoj.github.io/meetApp/'>here</a>.
 
 Else, you can fork the project, make sure all dependencies are installed and run 'npm start'

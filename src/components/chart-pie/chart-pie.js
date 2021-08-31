@@ -22,10 +22,10 @@ const ChartPie = ({ events }) => {
   <ResponsiveContainer height={400} className="recharts-responsive-container">
     <PieChart height={400}  
       margin={{
-        top: 20,
-        left: 30,
+        top: 10,
+        left: 60,
         right: 30,
-        bottom: 20
+        bottom: 60
         }}>
       <Pie
         data={data}

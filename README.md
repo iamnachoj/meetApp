@@ -42,14 +42,14 @@ Dependencies | Version
 ### 1. Filter events by city
 As a user I should be able to filter events by city So that I can see the list of events that take place in that city
 
-#### SCENARIO 1: When user hasn't searched for a city, show upcoming events from all cities.
+#### :one: SCENARIO 1: When user hasn't searched for a city, show upcoming events from all cities.
 
 Given user hasn’t searched for any city When the user opens the app Then the user should see a list of all upcoming events
 
-#### SCENARIO 2: User should see a list of suggestions when they seach for a city.
+#### :two: SCENARIO 2: User should see a list of suggestions when they seach for a city.
 
 Given the main page is open When user starts typing in the city textbox Then the user should see a list of cities (suggestions) that match what they’ve typed
 
-#### SCENARIO 3: User can select a city from the suggested list.
+#### :three: SCENARIO 3: User can select a city from the suggested list.
 
 Given the user was typing “Berlin” in the city textbox And the list of suggested cities is showing When the user selects a city (e.g., “Berlin, Germany”) from the list Then their city should be changed to that city (i.e., “Berlin, Germany”) And the user should receive a list of upcoming events in that city

@@ -65,7 +65,7 @@ class App extends React.Component {
         <Chart locations={this.state.locations} events={this.state.events}/>
       </div>
       <EventList events={this.state.events}/>
-      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
+      {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} /> */}
     </div>
     );
   }
